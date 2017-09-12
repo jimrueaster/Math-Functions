@@ -17,6 +17,27 @@ def is_prime(n):
         return False
 
 
+# Get greatest common divisor through Euclidean algorithm
+# param int a: an integer
+# param int b: another integer
+# return int
+def gcd(a, b):
+    if a < b:
+        a, b = b, a
+
+    while b != 0:
+        a, b = b, a % b
+    return a
+
+
+# Judge the two params are co_prime or not
+# param int m: an integer
+# param int n: another integer
+# return bool
+def is_co_prime(m, n):
+    return gcd(m, n) == 1
+
+
 # Get a list of prime numbers
 # param int min_num: from where
 # param int max_num: to where(include)
