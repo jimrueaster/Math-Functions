@@ -3,6 +3,8 @@
 # Author: JimruEaster<295140325@qq.com>
 # Created on 2017-09-11 16:59
 
+from prime import is_prime
+
 
 # Get greatest common divisor through Euclidean algorithm
 # param int a: an integer
@@ -29,9 +31,11 @@ def is_co_prime(m, n):
 # param int n: an integer
 # return int
 def get_euler(n):
-    cnt = 0
-    for i in range(n):
-        if is_co_prime(i, n):
-            cnt +=1
-    return cnt
-
+    if is_prime(n):
+        return n-1
+    else:
+        cnt = 0
+        for i in range(n):
+            if is_co_prime(i, n):
+                cnt +=1
+        return cnt
