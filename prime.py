@@ -11,7 +11,7 @@ from math import sqrt
 # return bool
 def is_prime(n):
     n = int(n)
-    if 0 not in [n%i for i in range(2, int(sqrt(n))+1)]:
+    if 0 not in [n % i for i in range(2, int(sqrt(n))+1)]:
         return True
     else:
         return False
@@ -58,6 +58,6 @@ def get_prime(min_num, max_num, reverse=False):
         elif n == 2:
             lst.append(2)
         else:
-            if 0 not in [n % i for i in range(2, int(sqrt(n))+1)]:
+            if is_prime(n):
                 lst.append(n)
     return lst
