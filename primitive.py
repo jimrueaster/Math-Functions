@@ -27,6 +27,7 @@ def is_primitive_root(m, a):
 # return list
 def get_primitive_root(m):
     primitive_list = []
+    m = int(float(m))
     for a in range(m):
         if is_primitive_root(m, a):
             primitive_list.append(a)
